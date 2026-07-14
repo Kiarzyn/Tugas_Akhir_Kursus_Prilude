@@ -25,7 +25,6 @@ int main() {
 
         totalNilai += nilai[i];
     }
-
     rataRata = (float)totalNilai / jumlahSiswa;
 
     printf("\n=== HASIL ===\n");
@@ -37,7 +36,7 @@ int main() {
             printf("%s - %.2f - Tidak Lulus\n", nama[i], nilai[i]);
         }
     }
-
+    printf("Total nilai kelas: %.2f\n", totalNilai);
     printf("Rata-rata kelas: %.2f\n", rataRata);
 
     return 0;
