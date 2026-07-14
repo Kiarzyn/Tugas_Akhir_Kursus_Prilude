@@ -1,43 +1,44 @@
 #include <stdio.h>
-#include <string.h>
 
 int main() {
-    int jumlah_siswa;
+    int jumlahSiswa;
 
     printf("Masukkan jumlah siswa: ");
-    scanf("%d", &jumlah_siswa);
-    printf("\n");
+    scanf("%d", &jumlahSiswa);
 
-    char nama[jumlah_siswa][50];
-    int nilai[jumlah_siswa];
+    char nama[jumlahSiswa][50];
+    float nilai[jumlahSiswa];
 
-    float total_nilai = 0;
-    float rata_rata;
+    float totalNilai = 0;
+    float rataRata;
 
-    for (int i = 0; i < jumlah_siswa; i++) {
-        printf("Siswa ke-%d\n", i + 1);
+    for(int i = 0; i < jumlahSiswa; i++) {
+        printf("\nSiswa ke-%d\n", i + 1);
+
+        while (getchar() != '\n');
+
         printf("Nama: ");
+        scanf("%[^\n]", nama[i]);
 
-        scanf("%s", nama[i]);
         printf("Nilai: ");
-        scanf("%d", &nilai[i]);
-        printf("\n");
+        scanf("%f", &nilai[i]);
 
-        total_nilai += nilai[i];
+        totalNilai += nilai[i];
     }
 
-    rata_rata = total_nilai / jumlah_siswa;
+    rataRata = (float)totalNilai / jumlahSiswa;
 
-    printf("=== HASIL ===\n");
-    for (int i = 0; i < jumlah_siswa; i++) {
+    printf("\n=== HASIL ===\n");
+    for(int i = 0; i < jumlahSiswa; i++) {
 
         if (nilai[i] >= 75) {
-            printf("%s - %d - Lulus\n", nama[i], nilai[i]);
+            printf("%s - %.2f - Lulus\n", nama[i], nilai[i]);
         } else {
-            printf("%s - %d - Tidak Lulus\n", nama[i], nilai[i]);
+            printf("%s - %.2f - Tidak Lulus\n", nama[i], nilai[i]);
         }
     }
-    printf("\nRata-rata kelas: %.2f\n", rata_rata);
+
+    printf("Rata-rata kelas: %.2f\n", rataRata);
 
     return 0;
 }
