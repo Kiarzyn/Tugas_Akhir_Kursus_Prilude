@@ -36,6 +36,7 @@ int main() {
             printf("%s - %.2f - Tidak Lulus\n", nama[i], nilai[i]);
         }
     }
+    printf("\n");
     printf("Total nilai kelas: %.2f\n", totalNilai);
     printf("Rata-rata kelas: %.2f\n", rataRata);
 
